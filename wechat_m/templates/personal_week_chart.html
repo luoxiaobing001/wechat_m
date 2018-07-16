@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'main' %}">首页</a><i class="fa fa-angle-right"></i>个人当周数据统计</li>
+    </ol>
+
+    <div id="container" style="width: 600px;height:400px;"></div>
+
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+    <script>
+    var chart = Highcharts.chart('container',{
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '个人加粉数量'
+        },
+        subtitle: {
+            text: '数据来源: WorldClimate.com'
+        },
+        xAxis: {
+            categories: {{ X|safe }},
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '加粉量 (人)'
+            }
+        },
+        tooltip: {
+            // head + 每个 point + footer 拼接成完整的 table
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} 人</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: '加粉量',
+            data: {{ Y }}
+        }]
+    });
+    </script>
+{% endblock %}
+{% block title %}
+    <li id="menu-academico"><a href="{% url 'chart' %}"><i class="fa fa-bar-chart"></i><span>数据统计</span>
+        <div class="clearfix"></div>
+    </a></li>
+{% endblock %}

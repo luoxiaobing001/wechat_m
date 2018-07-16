@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block content %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'main' %}">首页</a><i class="fa fa-angle-right"></i>数据修改</li>
+    </ol>
+    <div class="grid-form">
+        <div class="grid-form1">
+            <h3 style="text-align:center">每日数据修改</h3>
+            <div class="tab-content">
+                <div class="tab-pane active" id="horizontal-form">
+                    <form class="form-horizontal" action="" method="post">
+                        <p>所在地区</p>
+                        <hr>
+                        <div class="form-group">
+                            <label for="selector1" class="col-sm-2 control-label">省</label>
+                            <div class="col-sm-8">
+                                <select name="selector1" id="province" class="form-control1" value>
+                                    <option>请选择省</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="selector1" class="col-sm-2 control-label">市</label>
+                            <div class="col-sm-8">
+                                <select name="selector1" id="city" class="form-control1">
+                                    <option>请选择市</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="selector1" class="col-sm-2 control-label">县</label>
+                            <div class="col-sm-8">
+                                <select name="selector1" id="county" class="form-control1">
+                                    <option>请选择县</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <p>加粉数量</p>
+                        <hr>
+                        <div class="form-group">
+                            <label for="mediuminput" class="col-sm-2 control-label">昨日总粉数</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control1" id="original_fans"
+                                       placeholder="请填写昨日总粉数">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="selector1" class="col-sm-2 control-label">加粉类型</label>
+                            <div class="col-sm-8">
+                                <select name="selector1" id="province" class="form-control1" value>
+                                    <option value="1" selected>主动加粉</option>
+                                    <option value="2">被动加粉</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mediuminput" class="col-sm-2 control-label">当天加粉数</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control1" id="active_fans"
+                                       placeholder="请填写当天加粉数">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mediuminput" class="col-sm-2 control-label">发出的好友邀请数</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control1" id="original_fans"
+                                       placeholder="请填写发出的好友邀请数">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mediuminput" class="col-sm-2 control-label">对话数</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control1" id="original_fans"
+                                       placeholder="请填写对话数">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mediuminput" class="col-sm-2 control-label">推送朋友圈数</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control1" id="original_fans"
+                                       placeholder="请填写推送朋友圈数">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mediuminput" class="col-sm-2 control-label">加群数</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control1" id="original_fans"
+                                       placeholder="请填写加群数">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mediuminput" class="col-sm-2 control-label">帮忙推送朋友圈数</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control1" id="original_fans"
+                                       placeholder="请填写帮忙推送朋友圈数">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <div class="bs-example" data-example-id="form-validation-states">
+
+            </div>
+            <div class="bs-example" data-example-id="form-validation-states-with-icons">
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <input type="submit" value="提交"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+
+    </div>
+{% endblock %}
